@@ -27,7 +27,7 @@ import { NavigationMenu } from '../pages/Navigation';
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('clearSession', () => {
-  cy.window().then(win => {
+  cy.window().then((win) => {
     win.sessionStorage.clear();
   });
 });
