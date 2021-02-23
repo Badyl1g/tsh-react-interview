@@ -1,12 +1,17 @@
 // see https://testing-library.com/docs/react-testing-library/setup#custom-render
 import React, { ReactNode } from 'react';
 import { MemoryRouter as Router } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { Queries } from '@testing-library/dom';
 
-const Wrapper = ({ children }: { children?: ReactNode }) => {
-  return <Router>{children}</Router>;
-};
+const queryClient = new QueryClient();
+
+const Wrapper = ({ children }: { children?: ReactNode }) => (
+  <Router>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  </Router>
+);
 
 function customRender(
   ui: React.ReactElement,

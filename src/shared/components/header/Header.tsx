@@ -10,6 +10,8 @@ export const Header: React.FC = ({ children }) => {
 
       <Link to={AppRoute.home}>Home</Link>
       <Link to={AppRoute.login}>Login</Link>
+
+      <div>{children}</div>
     </header>
   );
 };
