@@ -1,33 +1,58 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { AppRoute } from 'routing/AppRoute.enum';
-import { Layout } from 'shared/components/layout/Layout';
+import {
+  Container,
+  Grid,
+  makeStyles,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@material-ui/core';
 
-export const Login = () => {
+import Header from 'shared/components/header/Header';
+import heroImage from 'assets/images/bridge-runner.png';
+import LoginForm from './components/LoginForm/LoginForm';
+
+const useStyles = makeStyles(({ palette }) => ({
+  root: { height: '100vh', background: palette.background.paper },
+  side: {
+    height: '100%',
+  },
+  heroImage: {
+    width: '100%',
+    height: '100vh',
+    objectFit: 'cover',
+  },
+}));
+
+const Login = () => {
+  const classes = useStyles();
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
-    <Layout noHeader>
-      <Link to={AppRoute.home}>Products page</Link>
+    <Grid className={classes.root} container>
+      {!isSmallScreen ? (
+        <Grid className={classes.side} md={5} item>
+          <img
+            className={classes.heroImage}
+            src={heroImage}
+            alt="Running man"
+          />
+        </Grid>
+      ) : null}
 
-      <h2>Login</h2>
+      <Grid className={classes.side} xs={12} md={7} item>
+        <Header simple />
 
-      <form>
-        <div>
-          <label>
-            username:
-            <input name="username" />
-          </label>
-        </div>
+        <Container>
+          <Typography variant="h4">Login</Typography>
 
-        <div>
-          <label>
-            password:
-            <input name="password" type="password" />
-          </label>
-        </div>
-
-        <button type="submit">submit</button>
-      </form>
-    </Layout>
+          <LoginForm onSubmit={() => {}} />
+        </Container>
+      </Grid>
+    </Grid>
   );
 };
+
+export default Login;

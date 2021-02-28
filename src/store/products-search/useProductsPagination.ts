@@ -1,7 +1,8 @@
-import { useProductSearch } from './useProductsSearch';
+import { useProducts, useProductSearch } from './useProductsSearch';
 
 export const useProductsPagination = () => {
-  const { filters, setFilters, queryData } = useProductSearch();
+  const queryData = useProducts();
+  const { filters, setFilters } = useProductSearch();
 
   const prevPage = () => setFilters({ page: filters.page - 1 });
 

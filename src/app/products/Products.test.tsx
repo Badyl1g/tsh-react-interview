@@ -1,13 +1,20 @@
 import React from 'react';
 
-import { render } from 'tests';
+import { render, waitFor } from 'tests';
 
-import { Products } from './Products';
+import Products from './Products';
+// import { getProducts as getProductsMock } from 'api/client';
+// import { mockProductsResponse } from 'mocks/products';
+
+// jest.mock('api/client');
+
+// getProductsMock.mockReturnValue(Promise.resolve(mockProductsResponse));
 
 describe('Products', () => {
   test('Displays page header', async () => {
-    const { getByText } = render(<Products />);
+    const { getByRole, getByText } = render(<Products />);
 
-    expect(getByText('Products page')).toBeInTheDocument();
+    // getByText('Products page')
+    getByText(/loading/i);
   });
 });

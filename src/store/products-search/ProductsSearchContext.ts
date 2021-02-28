@@ -1,5 +1,7 @@
 import React from 'react';
+import { QueryObserverResult } from 'react-query';
 
+import { IProductsResponse } from 'api/client.types';
 import {
   IProductSearchState,
   ProductSearchAction,
@@ -7,11 +9,38 @@ import {
 
 export const initialState: IProductSearchState = {
   search: '',
-  limit: 10,
+  limit: 8,
   page: 1,
   promo: null,
   active: null,
 };
+
+export const ProdutsContext = React.createContext<
+  QueryObserverResult<IProductsResponse>
+>(undefined!);
+// >({ data: undefined }  as <QueryObserverResult<IProductsResponse>>);
+// >({
+//   data: undefined,
+//   dataUpdatedAt: null,
+//   error: null,
+//   errorUpdatedAt: null,
+//   failureCount: null,
+//   isError: false,
+//   isFetched: false,
+//   isFetchedAfterMount: false,
+//   isFetching: false,
+//   isIdle: false,
+//   isLoading: false,
+//   isLoadingError: false,
+//   isPlaceholderData: false,
+//   isPreviousData: false,
+//   isRefetchError: false,
+//   isStale: false,
+//   isSuccess: false,
+//   refetch: () => {},
+//   remove: () => {},
+//   status: null,
+// });
 
 export const ProductsSearchStateContext = React.createContext(initialState);
 

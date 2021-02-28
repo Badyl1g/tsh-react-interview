@@ -1,25 +1,23 @@
 import React from 'react';
 
-import { useProductsPagination } from 'store/products-search/useProductsPagination';
+import { Pagination } from '@material-ui/lab';
 
-export const ProductsPagination = () => {
-  // TODO Fix this 10
-  const { page, totalPages, prevPage, nextPage } = useProductsPagination();
+import { ProductsPaginationProps } from './ProductsPagination.types';
 
-  return (
-    <div>
-      <button onClick={prevPage} disabled={page <= 1}>
-        prev
-      </button>
+const ProductsPagination: React.FC<ProductsPaginationProps> = ({
+  page,
+  totalPages,
+  changePage,
+  onChange,
+}) => (
+  <Pagination
+    count={totalPages}
+    page={page}
+    onChange={(_, page) => {
+      onChange?.();
+      changePage(page);
+    }}
+  />
+);
 
-      {page}
-
-      <button
-        onClick={nextPage}
-        disabled={totalPages !== undefined && page >= totalPages}
-      >
-        next
-      </button>
-    </div>
-  );
-};
+export default ProductsPagination;

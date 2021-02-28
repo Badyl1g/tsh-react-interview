@@ -1,4 +1,6 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+// import debounce from 'lodash/debounce';
 
 import {
   ProductSearchAction,
@@ -8,7 +10,11 @@ import {
   ProductsSearchStateContext,
   ProductsDispatchContext,
   initialState,
+  ProdutsContext,
 } from './ProductsSearchContext';
+import { getProducts } from 'api/client';
+import { IProductsResponse } from 'api/client.types';
+// import useDebounce from 'shared/hooks/use-debounce/use-debounce';
 
 const reducer = (
   state: IProductSearchState = initialState,
@@ -26,14 +32,35 @@ const reducer = (
   }
 };
 
-export const ProductsStore: React.FC = ({ children }) => {
+// const debouncedGetProducts: ReturnType<typeof debounce> = debounce(
+//   getProducts,
+//   500,
+//   { leading: true }
+// );
+
+const ProductsStore: React.FC = ({ children }) => {
   const [filters, dispatch] = React.useReducer(reducer, initialState);
+
+  // const debouncedSearchQuery = useDebounce(
+  //   JSON.stringify(['products', filters]),
+  //   500
+  // );
+
+  const queryData = useQuery<IProductsResponse>(
+    ['products', filters],
+    () => getProducts(filters),
+    { keepPreviousData: true }
+  );
 
   return (
     <ProductsSearchStateContext.Provider value={filters}>
       <ProductsDispatchContext.Provider value={dispatch}>
-        {children}
+        <ProdutsContext.Provider value={queryData}>
+          {children}
+        </ProdutsContext.Provider>
       </ProductsDispatchContext.Provider>
     </ProductsSearchStateContext.Provider>
   );
 };
+
+export default ProductsStore;

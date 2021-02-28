@@ -10,10 +10,14 @@ export const getProducts = async (
 
   return fetch(
     `${process.env.REACT_APP_API_URL}/products?${searchParams}`
-  ).then((r) => r.json());
+  ).then((r) => {
+    if (!r.ok) throw new Error(r.statusText);
+    return r.json();
+  });
 };
 
 export const getProduct = async (id: string): Promise<IProduct> =>
-  fetch(`${process.env.REACT_APP_API_URL}/products/${id}`).then((r) =>
-    r.json()
-  );
+  fetch(`${process.env.REACT_APP_API_URL}/products/${id}`).then((r) => {
+    if (!r.ok) throw new Error(r.statusText);
+    return r.json();
+  });

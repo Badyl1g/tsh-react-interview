@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'tests';
 
 import { mockProductsList } from 'mocks/products';
-import { ProductsList } from './ProductsList';
+import ProductsList from './ProductsList';
 
 describe('Products', () => {
   test('Displays page header', async () => {

@@ -5,12 +5,16 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { Queries } from '@testing-library/dom';
 
+import ProductsStore from 'store/products-search/ProductsSearchStore';
+
 const queryClient = new QueryClient();
 
 const Wrapper = ({ children }: { children?: ReactNode }) => (
-  <Router>
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  </Router>
+  <QueryClientProvider client={queryClient}>
+    <ProductsStore>
+      <Router>{children}</Router>
+    </ProductsStore>
+  </QueryClientProvider>
 );
 
 function customRender(
