@@ -1,19 +1,38 @@
 import React from 'react';
 
-import { ILayoutProps } from './Layout.types';
-import { Footer } from '../footer/Footer';
-import { Header } from '../header/Header';
+import { Container, makeStyles } from '@material-ui/core';
 
-export const Layout: React.FC<ILayoutProps> = ({
+import { ILayoutProps } from './Layout.types';
+import Footer from '../footer/Footer';
+import Header from '../header/Header';
+
+const useStyles = makeStyles(({ spacing }) => ({
+  container: {
+    minHeight: `calc(100vh - 144px - 64px)`,
+    paddingTop: spacing(7),
+  },
+}));
+
+const Layout: React.FC<ILayoutProps> = ({
   noHeader = false,
   renderHeaderContent,
   children,
-}) => (
-  <div>
-    {!noHeader && <Header>{renderHeaderContent?.()}</Header>}
+}) => {
+  const classes = useStyles();
 
-    <main>{children}</main>
+  return (
+    <div>
+      {!noHeader && <Header>{renderHeaderContent?.()}</Header>}
 
-    <Footer />
-  </div>
-);
+      <main>
+        <Container className={classes.container} maxWidth="lg" fixed>
+          <>{children}</>
+        </Container>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Layout;
