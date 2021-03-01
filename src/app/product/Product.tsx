@@ -19,7 +19,7 @@ import { IProduct } from 'api/client.types';
 
 import { ReactComponent as CloseIcon } from 'assets/icons/close.svg';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette }) => ({
   root: {
     position: 'relative',
   },
@@ -28,6 +28,10 @@ const useStyles = makeStyles({
     top: 15,
     right: 15,
     zIndex: 1,
+    background: palette.background.default,
+    '&:hover, &:active, &:focus': {
+      backgroundColor: palette.background.default,
+    },
   },
   media: {
     height: 300,
@@ -46,7 +50,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
-});
+}));
 
 const Product = () => {
   const { id } = useParams<IProductsUrlParams>();
