@@ -3,12 +3,13 @@ import React from 'react';
 import { render } from 'tests';
 
 import Products from './Products';
-// import { getProducts as getProductsMock } from 'api/client';
-// import { mockProductsResponse } from 'mocks/products';
+import { getProducts } from 'api/client';
 
-// jest.mock('api/client');
+jest.mock('api/client');
 
-// getProductsMock.mockReturnValue(Promise.resolve(mockProductsResponse));
+const getProductsMock = getProducts as jest.Mock;
+
+getProductsMock.mockImplementation(() => {});
 
 describe('Products', () => {
   test('Displays page header', async () => {
