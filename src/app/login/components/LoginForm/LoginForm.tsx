@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, Grid, OutlinedInput } from '@material-ui/core';
+import { Button, Grid, OutlinedInput, Typography } from '@material-ui/core';
 
 import { AppRoute } from 'routing/AppRoute.enum';
 import { ILoginFormProps } from './LoginForm.types';
@@ -45,7 +45,9 @@ const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit }) => {
         </Grid>
 
         <Grid xs={12} item>
-          <Link to={AppRoute.home}>Forgot your password?</Link>
+          <Typography color="textSecondary" component={Link} to={AppRoute.home}>
+            Forgot your password?
+          </Typography>
         </Grid>
       </Grid>
     </form>
