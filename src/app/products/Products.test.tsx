@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, waitFor } from 'tests';
+import { render } from 'tests';
 
 import Products from './Products';
 // import { getProducts as getProductsMock } from 'api/client';
@@ -12,7 +12,7 @@ import Products from './Products';
 
 describe('Products', () => {
   test('Displays page header', async () => {
-    const { getByRole, getByText } = render(<Products />);
+    const { getByText } = render(<Products />);
 
     // getByText('Products page')
     getByText(/loading/i);

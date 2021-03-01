@@ -6,7 +6,7 @@ import Login from './Login';
 
 describe('Login', () => {
   test('Displays all information', async () => {
-    const { getByText, getByLabelText } = render(<Login />);
+    const { getByLabelText } = render(<Login />);
 
     getByLabelText(/username/i);
     getByLabelText(/password/i);
