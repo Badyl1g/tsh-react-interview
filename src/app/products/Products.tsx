@@ -32,7 +32,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
 }));
 
 const Products = () => {
-  let { data: products, status } = useProducts();
+  const { data: products, status } = useProducts();
   const { id } = useParams<IProductsUrlParams>();
   const paginationProps = useProductsPagination();
   const classes = useStyles();
