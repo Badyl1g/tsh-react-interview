@@ -13,9 +13,8 @@ getProductsMock.mockImplementation(() => {});
 
 describe('Products', () => {
   test('Displays page header', async () => {
-    const { getByText } = render(<Products />);
+    const { getByTitle } = render(<Products />);
 
-    // getByText('Products page')
-    getByText(/loading/i);
+    getByTitle(/loading/i);
   });
 });

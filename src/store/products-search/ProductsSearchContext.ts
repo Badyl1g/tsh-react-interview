@@ -18,29 +18,6 @@ export const initialState: IProductSearchState = {
 export const ProdutsContext = React.createContext<
   QueryObserverResult<IProductsResponse>
 >(undefined!);
-// >({ data: undefined }  as <QueryObserverResult<IProductsResponse>>);
-// >({
-//   data: undefined,
-//   dataUpdatedAt: null,
-//   error: null,
-//   errorUpdatedAt: null,
-//   failureCount: null,
-//   isError: false,
-//   isFetched: false,
-//   isFetchedAfterMount: false,
-//   isFetching: false,
-//   isIdle: false,
-//   isLoading: false,
-//   isLoadingError: false,
-//   isPlaceholderData: false,
-//   isPreviousData: false,
-//   isRefetchError: false,
-//   isStale: false,
-//   isSuccess: false,
-//   refetch: () => {},
-//   remove: () => {},
-//   status: null,
-// });
 
 export const ProductsSearchStateContext = React.createContext(initialState);
 

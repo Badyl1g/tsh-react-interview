@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-// import debounce from 'lodash/debounce';
 
 import {
   ProductSearchAction,
@@ -14,7 +13,6 @@ import {
 } from './ProductsSearchContext';
 import { getProducts } from 'api/client';
 import { IProductsResponse } from 'api/client.types';
-// import useDebounce from 'shared/hooks/use-debounce/use-debounce';
 
 const reducer = (
   state: IProductSearchState = initialState,
@@ -32,19 +30,8 @@ const reducer = (
   }
 };
 
-// const debouncedGetProducts: ReturnType<typeof debounce> = debounce(
-//   getProducts,
-//   500,
-//   { leading: true }
-// );
-
 const ProductsStore: React.FC = ({ children }) => {
   const [filters, dispatch] = React.useReducer(reducer, initialState);
-
-  // const debouncedSearchQuery = useDebounce(
-  //   JSON.stringify(['products', filters]),
-  //   500
-  // );
 
   const queryData = useQuery<IProductsResponse>(
     ['products', filters],

@@ -17,7 +17,7 @@ import { IProductsListItemProps } from './ProductsListItem.types';
 import Card from 'shared/components/card/Card';
 import Badge from 'shared/components/badge/Badge';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ breakpoints }) => ({
   root: {
     listStyle: 'none',
     textDecoration: 'none',
@@ -29,6 +29,10 @@ const useStyles = makeStyles({
     minHeight: 500,
     display: 'flex',
     flexDirection: 'column',
+
+    [breakpoints.down('xs')]: {
+      minHeight: 400,
+    },
   },
   media: {
     height: 200,
@@ -44,7 +48,7 @@ const useStyles = makeStyles({
   cardActionsGrid: {
     padding: '16px 8px',
   },
-});
+}));
 
 const ProductsListItem: React.FC<IProductsListItemProps> = ({ product }) => {
   const classes = useStyles();

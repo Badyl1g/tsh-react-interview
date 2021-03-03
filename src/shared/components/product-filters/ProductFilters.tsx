@@ -10,7 +10,8 @@ import {
   Grid,
 } from '@material-ui/core';
 
-import { useProductSearch } from 'store/products-search/useProductsSearch';
+import useProductSearch from 'store/products-search/useProductsSearch';
+
 import { ReactComponent as Search } from 'assets/icons/search.svg';
 
 const useStyles = makeStyles(({ spacing }) => ({
