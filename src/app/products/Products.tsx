@@ -5,13 +5,13 @@ import { CircularProgress, Dialog, makeStyles } from '@material-ui/core';
 import { IProductsUrlParams } from 'app/product/Product.types';
 import Layout from 'shared/components/layout/Layout';
 import Product from 'app/product/Product';
-import ProductFilters from 'shared/components/product-filters/ProductFilters';
+import ProductFilters from 'app/products/components/product-filters/ProductFilters';
 import useProducts from 'store/products-search/useProducts';
 import useProductsPagination from 'store/products-search/useProductsPagination';
 
-import ErrorFetchingProducts from './components/ErrorFetchingProducts/ErrorFetchingProducts';
-import ProductsPagination from './components/ProductsPagination/ProductsPagination';
-import ProductsList from './components/ProductsList/ProductsList';
+import ErrorFetchingProducts from './components/error-fetching-products/ErrorFetchingProducts';
+import ProductsPagination from './components/products-pagination/ProductsPagination';
+import ProductsList from './components/products-list/ProductsList';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   loadingIconWrapper: {

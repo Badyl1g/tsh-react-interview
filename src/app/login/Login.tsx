@@ -12,7 +12,7 @@ import {
 import Header from 'shared/components/header/Header';
 import heroImage from 'assets/images/bridge-runner.png';
 
-import LoginForm from './components/LoginForm/LoginForm';
+import LoginForm from './components/login-form/LoginForm';
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
   root: { height: '100vh', background: palette.background.paper },

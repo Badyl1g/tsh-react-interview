@@ -12,15 +12,8 @@ import {
 import useProductSearch from 'store/products-search/useProductsSearch';
 import { ReactComponent as Search } from 'assets/icons/search.svg';
 
-const useStyles = makeStyles(({ spacing }) => ({
-  root: {
-    // display: 'flex',
-    // alignItems: 'center',
-    // flexWrap: 'wrap',
-    // padding: 20,
-  },
+const useStyles = makeStyles(() => ({
   textField: {
-    // margin: `${spacing(1)}px 0`,
     minWidth: 300,
   },
 }));
@@ -35,13 +28,7 @@ const ProductFilters = () => {
   const classes = useStyles();
 
   return (
-    <Grid
-      className={classes.root}
-      spacing={2}
-      alignItems="center"
-      justify="space-between"
-      container
-    >
+    <Grid spacing={2} alignItems="center" justify="space-between" container>
       <Grid xs={12} md="auto" item>
         <TextField
           className={classes.textField}
@@ -68,7 +55,7 @@ const ProductFilters = () => {
             <Checkbox
               name="active"
               color="primary"
-              defaultChecked={filters.active ?? false}
+              checked={filters.active ?? false}
               onChange={(e) =>
                 setFilters({ active: e.currentTarget.checked || null })
               }
@@ -82,7 +69,7 @@ const ProductFilters = () => {
             <Checkbox
               name="promo"
               color="primary"
-              defaultChecked={filters.promo ?? false}
+              checked={filters.promo ?? false}
               onChange={(e) =>
                 setFilters({ promo: e.currentTarget.checked || null })
               }

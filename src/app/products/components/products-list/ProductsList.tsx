@@ -2,8 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import { Grid, makeStyles } from '@material-ui/core';
 
-import ProductsListItem from '../ProductsListItem/ProductsListItem';
-import NoProductsFound from '../NoProductsFound/NoProductsFound';
+import ProductsListItem from '../products-list-item/ProductsListItem';
+import NoProductsFound from '../no-products-found/NoProductsFound';
 
 import { IProductsListProps } from './ProductsList.types';
 
