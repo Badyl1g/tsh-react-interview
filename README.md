@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/aa0fdb83-30ac-4b41-9550-a343353e4d29/deploy-status)](https://app.netlify.com/sites/tsh-react-interview/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and modified by TSH team for the recruit process.
 
 ## Quick Start
