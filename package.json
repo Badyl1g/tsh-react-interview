@@ -10,7 +10,7 @@
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test",
     "lint": "eslint src --max-warnings=0",
     "lint:fix": "eslint src --max-warnings=0 --fix",
-    "format": "prettier --write .",
+    "format": "prettier --write --ignore-path .gitignore .",
     "serve": "./node_modules/.bin/http-server ./build --port 1337",
     "e2e:open": "cd e2e && ./node_modules/.bin/cypress open; cd ..",
     "e2e:run:firefox": "cd e2e && ./node_modules/.bin/cypress run --browser firefox && cd ..",
@@ -53,7 +53,6 @@
         ],
         "rules": {
           "react/prop-types": "off",
-          "react/jsx-key": "error",
           "react/no-array-index-key": "warn",
           "import/order": [
             "warn",
