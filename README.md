@@ -48,6 +48,18 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `lint`
+
+Runs eslint and outputs errors and warnings (It exits with error if there are any warnings)
+
+### `lint:fix`
+
+Runs eslint and fixes all auto-fixable errors
+
+### `format`
+
+Runs prettier and formats all files that are not ignored by .gitignore
+
 ### `npm run coverage`
 
 Launches the test runner in the coverage report generation mode.<br />
