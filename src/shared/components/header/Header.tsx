@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import {
   AppBar as MatAppBar,
   Button,
@@ -15,6 +14,7 @@ import {
 } from '@material-ui/core';
 
 import { AppRoute } from 'routing/AppRoute.enum';
+
 import { IHeaderProps } from './Header.types';
 
 const AppBar = withStyles(({ palette }) => ({

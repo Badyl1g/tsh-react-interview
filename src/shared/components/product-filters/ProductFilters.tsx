@@ -1,6 +1,5 @@
 import React from 'react';
 import debounce from 'lodash/debounce';
-
 import {
   Checkbox,
   FormControlLabel,
@@ -11,7 +10,6 @@ import {
 } from '@material-ui/core';
 
 import useProductSearch from 'store/products-search/useProductsSearch';
-
 import { ReactComponent as Search } from 'assets/icons/search.svg';
 
 const useStyles = makeStyles(({ spacing }) => ({

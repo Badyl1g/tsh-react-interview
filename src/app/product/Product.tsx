@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { Link, useParams } from 'react-router-dom';
-
 import {
   Card,
   CardContent,
@@ -12,12 +11,12 @@ import {
 } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 
-import { IProductsUrlParams } from './Product.types';
 import { AppRoute } from 'routing/AppRoute.enum';
 import { getProduct } from 'api/client';
 import { IProduct } from 'api/client.types';
-
 import { ReactComponent as CloseIcon } from 'assets/icons/close.svg';
+
+import { IProductsUrlParams } from './Product.types';
 
 const useStyles = makeStyles(({ palette }) => ({
   root: {

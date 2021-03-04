@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-
 import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 
-import { AppProvidersProps } from './AppProviders.types';
 import ProductsStore from 'store/products-search/ProductsSearchStore';
+
+import { AppProvidersProps } from './AppProviders.types';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: false } },

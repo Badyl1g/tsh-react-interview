@@ -1,7 +1,6 @@
 import React from 'react';
 
 import ErrorMessage from 'shared/components/error-message/ErrorMessage';
-
 import { ReactComponent as ListEmptyIcon } from 'assets/icons/list-empty.svg';
 
 const NoProductsFound = () => (

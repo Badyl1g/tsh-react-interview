@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { render } from 'tests';
+import { getProducts } from 'api/client';
 
 import Products from './Products';
-import { getProducts } from 'api/client';
 
 jest.mock('api/client');
 

@@ -1,7 +1,7 @@
 import React from 'react';
+import user from '@testing-library/user-event';
 
 import { render } from 'tests';
-import user from '@testing-library/user-event';
 
 import { ProductsPaginationProps } from './ProductsPagination.types';
 import ProductsPagination from './ProductsPagination';

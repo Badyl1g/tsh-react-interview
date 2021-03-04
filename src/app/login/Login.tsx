@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from 'clsx';
-
 import {
   Container,
   Grid,
@@ -10,10 +9,10 @@ import {
   useTheme,
 } from '@material-ui/core';
 
-import LoginForm from './components/LoginForm/LoginForm';
 import Header from 'shared/components/header/Header';
-
 import heroImage from 'assets/images/bridge-runner.png';
+
+import LoginForm from './components/LoginForm/LoginForm';
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
   root: { height: '100vh', background: palette.background.paper },

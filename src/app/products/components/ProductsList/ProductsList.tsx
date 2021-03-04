@@ -1,11 +1,11 @@
 import React from 'react';
 import clsx from 'clsx';
-
 import { Grid, makeStyles } from '@material-ui/core';
 
-import { IProductsListProps } from './ProductsList.types';
 import ProductsListItem from '../ProductsListItem/ProductsListItem';
 import NoProductsFound from '../NoProductsFound/NoProductsFound';
+
+import { IProductsListProps } from './ProductsList.types';
 
 const useStyles = makeStyles(() => ({
   root: {

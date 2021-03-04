@@ -2,6 +2,7 @@ import React from 'react';
 import { QueryObserverResult } from 'react-query';
 
 import { IProductsResponse } from 'api/client.types';
+
 import {
   IProductSearchState,
   ProductSearchAction,

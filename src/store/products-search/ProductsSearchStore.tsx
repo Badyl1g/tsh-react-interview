@@ -1,6 +1,9 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 
+import { getProducts } from 'api/client';
+import { IProductsResponse } from 'api/client.types';
+
 import {
   ProductSearchAction,
   IProductSearchState,
@@ -11,8 +14,6 @@ import {
   initialState,
   ProdutsContext,
 } from './ProductsSearchContext';
-import { getProducts } from 'api/client';
-import { IProductsResponse } from 'api/client.types';
 
 const reducer = (
   state: IProductSearchState = initialState,

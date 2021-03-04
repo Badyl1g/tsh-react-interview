@@ -1,6 +1,5 @@
 import React from 'react';
 import { generatePath, Link } from 'react-router-dom';
-
 import {
   CardContent,
   CardMedia,
@@ -13,9 +12,10 @@ import {
 import { Rating } from '@material-ui/lab';
 
 import { AppRoute } from 'routing/AppRoute.enum';
-import { IProductsListItemProps } from './ProductsListItem.types';
 import Card from 'shared/components/card/Card';
 import Badge from 'shared/components/badge/Badge';
+
+import { IProductsListItemProps } from './ProductsListItem.types';
 
 const useStyles = makeStyles(({ breakpoints }) => ({
   root: {

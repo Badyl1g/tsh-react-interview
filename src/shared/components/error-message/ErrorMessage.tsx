@@ -1,6 +1,8 @@
-import { Grid, Icon, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
+import { Grid, Icon, makeStyles, Typography } from '@material-ui/core';
+
 import Card from '../card/Card';
+
 import { IErrorMessageProps } from './ErrorMessage.types';
 
 const useStyles = makeStyles(({ spacing }) => ({

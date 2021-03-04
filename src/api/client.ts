@@ -1,5 +1,6 @@
-import { IProduct, IProductsResponse } from './client.types';
 import { IProductSearchState } from 'store/products-search/ProductsSearchStore.types';
+
+import { IProduct, IProductsResponse } from './client.types';
 
 export const getProducts = async (
   filters: IProductSearchState

@@ -1,10 +1,10 @@
 import React from 'react';
-
 import { Container, makeStyles } from '@material-ui/core';
 
-import { ILayoutProps } from './Layout.types';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
+
+import { ILayoutProps } from './Layout.types';
 
 const useStyles = makeStyles(({ spacing }) => ({
   container: {

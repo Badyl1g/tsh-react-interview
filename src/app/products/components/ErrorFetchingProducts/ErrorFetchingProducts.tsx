@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
 import ErrorMessage from 'shared/components/error-message/ErrorMessage';

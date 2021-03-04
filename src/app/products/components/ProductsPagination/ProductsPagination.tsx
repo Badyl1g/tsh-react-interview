@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Pagination } from '@material-ui/lab';
 
 import { ProductsPaginationProps } from './ProductsPagination.types';

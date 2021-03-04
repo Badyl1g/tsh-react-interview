@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { Button, Grid, OutlinedInput, Typography } from '@material-ui/core';
 
 import { AppRoute } from 'routing/AppRoute.enum';
+
 import { ILoginFormProps } from './LoginForm.types';
 
 const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit }) => {
